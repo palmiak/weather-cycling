@@ -53,12 +53,13 @@ python weather_cli.py "Kraków" --no-ai
 
 Copy `.env.example` to `.env` and fill in the values you need:
 
-| Variable | Required | Source |
-|----------|----------|--------|
-| `ANTHROPIC_API_KEY` | For AI summary | console.anthropic.com |
-| `OWM_API_KEY` | Optional | openweathermap.org (free) |
-| `TOMORROW_API_KEY` | Optional | tomorrow.io (free tier) |
-| `METEOPL_API_KEY` | Optional | api.meteo.pl |
+| Variable | Required | Default | Source |
+|----------|----------|---------|--------|
+| `ANTHROPIC_API_KEY` | For AI summary | — | console.anthropic.com |
+| `ANTHROPIC_MODEL` | No | `claude-haiku-4-5-20251001` | Any Claude model ID |
+| `OWM_API_KEY` | No | — | openweathermap.org (free) |
+| `TOMORROW_API_KEY` | No | — | tomorrow.io (free tier) |
+| `METEOPL_API_KEY` | No | — | api.meteo.pl |
 
 ## AI summary
 

@@ -32,6 +32,7 @@ GRAY = "\033[90m"
 
 # ── Config ─────────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-4-5-20251001")
 OWM_API_KEY = os.environ.get("OWM_API_KEY", "")        # openweathermap.org (free)
 TOMORROW_API_KEY = os.environ.get("TOMORROW_API_KEY", "")  # tomorrow.io (free tier)
 
@@ -856,7 +857,7 @@ Per-source daily summaries ({len(clean)} sources):
 Give a cycling-focused weather summary."""
 
     payload = {
-        "model": "claude-sonnet-4-20250514",
+        "model": ANTHROPIC_MODEL,
         "max_tokens": 800,
         "system": system,
         "messages": [{"role": "user", "content": prompt}]
