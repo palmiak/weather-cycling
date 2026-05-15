@@ -105,7 +105,7 @@ async def fetch_open_meteo(session: aiohttp.ClientSession, lat: float, lon: floa
         "hourly": "temperature_2m,precipitation,precipitation_probability,windspeed_10m,windgusts_10m,weathercode,relativehumidity_2m",
         "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max,windgusts_10m_max,weathercode",
         "current_weather": "true",
-        "forecast_days": 3,
+        "forecast_days": 8,
         "timezone": "auto",
         "windspeed_unit": "kmh",
     }
@@ -1084,8 +1084,8 @@ Environment variables:
             sys.exit(1)
 
     day_offset = (target_date - today).days
-    if day_offset < 0 or day_offset > 2:
-        print(f"{RED}Date must be today, tomorrow, or up to 2 days ahead.{RESET}")
+    if day_offset < 0 or day_offset > 6:
+        print(f"{RED}Date must be today or up to 6 days ahead.{RESET}")
         sys.exit(1)
 
     try:
